@@ -1,0 +1,19 @@
+ .servicios{
+    display: block;
+}
+.contenido-servicios_movil{
+    display: none;
+}
+.btn-cliente {
+   width: 22%;
+    height: 110px;
+    display: block;
+    float: left;
+    background: #eeeeee;
+    margin: 0 2% 17px 0;
+    background-repeat:no-repeat;
+    background-position: center center;
+}
+.btn-cliente.margen-der{
+    margin-right: 2.6%;
+}

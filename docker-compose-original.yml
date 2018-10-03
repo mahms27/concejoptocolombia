@@ -1,0 +1,42 @@
+version: '2'
+services:
+  web:
+    container_name: wordpress
+    image: wordpress
+    restart: always
+    ports:
+      - "80:80"
+    env_file: .env
+    networks:
+      - net
+    volumes:
+      - "./src:/var/www/html"
+  db:
+    container_name: db
+    image: mysql:5.7
+    restart: always
+    env_file: .env
+    networks:
+      - net
+    ports:
+      - "3306:3306"
+    volumes:
+      - "./data:/var/lib/mysql"
+  pma:
+    image: phpmyadmin/phpmyadmin
+    container_name: pma
+    ports:
+      - "8081:80"
+    networks:
+      - net  
+    depends_on:
+      - db
+      - web
+networks:
+  net:
+    driver: bridge 
+    ipam:
+      driver: default 
+      config:
+        - subnet: 172.30.0.0/16
+          gateway: 172.30.0.1

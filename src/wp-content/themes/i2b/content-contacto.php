@@ -1,0 +1,138 @@
+<div class="clearfix columnapag flotar_izq form-contacto">
+   <?php  
+   if(isset($_POST) && count($_POST) > 0 && filter_var($_POST['correo'], FILTER_VALIDATE_EMAIL)){ 
+        $datos_sitio = datos_sitio();
+        $admin_email =  $datos_sitio['email_de_contacto'];
+        $asunto =  'Contacto I2B';  
+                
+        $mensaje = array(
+            'Nombre' => $_POST['nombre'],
+            'correo' => $_POST['correo'],
+            'motivo' => $_POST['motivo'],
+            'Empresa' => $_POST['empresa'],
+            'Cargo' => $_POST['cargo'],
+            'Mensaje' => $_POST['mensaje']
+        );
+         if($_POST['checkBox'] == 'valueChecked'){
+            $datos_sitio = datos_sitio();
+            $admin_email = $datos_sitio['email_de_contacto'];
+            $asunto =  'Contacto I2B';  
+                
+        $mensaje = array(
+            'Nombre' => $_POST['nombre'],
+            'correo' => $_POST['correo'],
+            'motivo' => $_POST['motivo'],
+            'Empresa' => $_POST['empresa'],
+            'Cargo' => $_POST['cargo'],
+            'Mensaje' => $_POST['mensaje']
+            );
+         $msg = mensaje_contacto($mensaje);        
+        $result = sendMail($_POST['correo'], $admin_email, $_POST['nombre'], $asunto, $msg, $_FILES);   
+      }
+        
+        $msg = mensaje_contacto($mensaje);        
+        $result = sendMail($_POST['correo'], $admin_email, $_POST['nombre'], $asunto, $msg, $_FILES);                    
+        
+    } 
+    
+    ?>
+    
+    <form method="post" action="" enctype="multipart/form-data" name="form-contacto" id="formulario-contacto">
+        <?php if(isset($result)): ?>
+                <?php if($result == 1): ?>
+                     <div class="okCuadro margenBottom" style="width: 96%; margin: 0px 0px 20px; display: block;">Los datos fueron enviados con exito</div>
+                <?php else: ?>     
+                     <div class="errorCuadro margenBottom" style="width: 96%; margin: 0px 0px 20px; display: block;">Se produjo un error al enviar la información</div>
+                <?php endif; ?>                                 
+        <?php endif; ?>
+        <fieldset class="clearfix" style="margin-bottom: 12px;">       
+           <select id="select-motivo" name="motivo" class="selectBox">
+               <option value="">Seleccione un motivo por el cual nos escribe</option>
+               <option value="Consulta ">Consulta</option>
+               <option value="ContactoComercial ">Contacto Comercial </option>
+               <option value="TrabajaConNosotros">Trabaja con Nosotros</option>
+               <option value="Otro">Otro</option>
+           </select>
+        </fieldset>   
+        <fieldset class="clearfix">
+           <div class="inputs clearfix flotar_izq nombre">
+               <label class="t6">Su nombre</label>
+               <input type="text" name="nombre" value="" class="t2 input-activo" maxlength="80" />
+           </div>
+           <div class="inputs clearfix flotar_izq empresa">
+               <label class="t6">Su empresa</label>
+               <input type="text" name="empresa" value="" class="t2 input-activo" maxlength="60" />
+           </div> 
+        </fieldset> 
+        <fieldset class="clearfix">
+           <div class="inputs clearfix flotar_izq cargo">
+               <label class="t6">Cargo</label>
+               <input type="text" name="cargo" value="" class="t2 input-activo"  maxlength="60" />
+           </div>
+           <div class="inputs clearfix flotar_izq correo">
+               <label class="t6">Correo electrónico</label>
+               <input type="text" name="correo" value="" class="t2 input-activo" maxlength="80"/>
+           </div> 
+        </fieldset>
+        <fieldset class="clearfix">
+            <div class="textareas">
+                <label class="t6">Escríbanos</label>
+                <textarea name="mensaje" rows="10" cols="50" class="t2"></textarea>
+            </div>
+        </fieldset>
+        <fieldset class="clearfix">
+            <div class="checkBox">
+              
+                <input type="checkbox" name="checkBox" value="valueChecked" class="t2 input-activo checkBox" maxlength="80"/>
+                <label class="t6">Deseo recibir informaci&oacute;n a mi correo</label>
+            </div>
+        </fieldset>
+		<fieldset class="clearfix" style="margin-top: 31px;">
+            <!-- <div class="g-recaptcha" data-sitekey="6Le5nwQTAAAAAFqv5Y_LDBtdftoncSXP8IBm8NuO"></div>            -->			
+			 <div class="g-recaptcha" data-sitekey="6Le5nwQTAAAAAFqv5Y_LDBtdftoncSXP8IBm8NuO"></div> 
+			<!--  <div id="html_element"></div> -->
+        </fieldset>
+        <fieldset class="clearfix boton-postular" style="margin-top: 11px;">
+            <input type="submit" value="Enviar" class="flotar_der"/>
+        </fieldset>
+    </form>
+</div>
+<div class="clearfix columnapag flotar_izq col-der">
+    <?php $datos_sitio = datos_sitio(); ?>
+    <img src="http://www.i2btech.com/wp-content/uploads/2014/06/mapa-web.jpg" width="273" alt="Mapa I2b"/>    
+    <div class="direcciones">
+        <h3>Chile</h3>			                        
+        <p class="t3">
+            <?php echo $datos_sitio['direccion_chile']; ?>
+              <br />
+              <?php 
+                    $str = array('[', ']', '+', '(', ')', ' ');
+                    $tel = str_replace($str, '', $datos_sitio['telefono_chile']);                            
+               ?>
+               <a class="verMapa" href="https://www.google.com/maps/place/La+Concepci%C3%B3n+141,+Providencia,+Regi%C3%B3n+Metropolitana,+Chile/@-33.4245146,-70.6159423,17z/data=!3m1!4b1!4m2!3m1!1s0x9662cf615b7d4d29:0x6daf452c3d82cad0" target="_blank">Ver Mapa</a>
+               <a href="tel:<?php echo $tel; ?>" class="telefono"><?php echo $datos_sitio['telefono_chile']; ?> </a>
+        </p> 
+        <h3>Colombia</h3>			                        
+        <p class="t3">
+            <?php echo $datos_sitio['direccion_colombia']; ?>
+            <br />
+            <?php 
+                $str = array('[', ']', '+', '(', ')', ' ');
+                $tel = str_replace($str, '', $datos_sitio['telefono_colombia']);                            
+            ?>
+            <a class="verMapa" href="https://www.google.com/maps/place/11%C2%B000&#39;23.1%22N+74%C2%B049&#39;34.5%22W/@11.0069538,-74.826928,17z/data=!4m2!3m1!1s0x0:0x0)" target="_blank">Ver Mapa</a>
+            <a href="tel:<?php echo $tel; ?>" class="telefono"><?php echo $datos_sitio['telefono_colombia']; ?> </a>           
+        </p> 
+        <h3>Perú</h3>			                        
+        <p class="t3">
+            <?php echo $datos_sitio['direccion_peru']; ?>
+            <br />
+            <?php 
+                $str = array('[', ']', '+', '(', ')', ' ');
+                $tel = str_replace($str, '', $datos_sitio['telefono_peru']);                            
+            ?>
+            <a class="verMapa" href="https://www.google.com/maps/place/Av.+Camino+Real+341,+San+Isidro+15073,+Per%C3%BA/@-12.0971611,-77.0382539,17z/data=!3m1!4b1!4m5!3m4!1s0x9105c842d45aeb87:0x1169e6806aca832e!8m2!3d-12.0971611!4d-77.0360652" target="_blank">Ver Mapa</a>
+            <a href="tel:<?php echo $tel; ?>" class="telefono"><?php echo $datos_sitio['telefono_peru']; ?> </a>
+        </p> 
+    </div>
+</div>

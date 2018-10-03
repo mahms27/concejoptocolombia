@@ -1,0 +1,318 @@
+body {
+    font: 12px 'Droid Sans', sans-serif;
+}
+h1{
+    font: 34px 'Droid Sans', sans-serif;
+    color: #444444;    
+    margin: 12px 0 0 0;
+}
+input[type="text"]{
+    /*height: 32px;*/
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+.input-activo{   
+    background: #eeeeee;
+    border: solid #cccccc 1px;
+}
+.input-error{
+    background: #ffe9e9;
+    border: solid #ff2727 1px;
+}
+h2{
+    font: 24px 'Droid Sans', sans-serif;
+    font-weight: bold;
+    color: #444444;
+}
+h3{
+    font-weight: bold !important;
+    color: #444444;
+    font: 14px 'Droid Sans', sans-serif;
+}
+h4{    
+    font-weight: normal;
+    color: #FF2626;
+    font: 16px 'Droid Sans', sans-serif;
+}
+a, .breadcrumb a{
+    font: 13px 'Droid Sans', sans-serif;
+    font-weight: bold;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+.t1{
+   font: 18px 'Droid Sans', sans-serif;
+   font-weight: normal;
+   color: #777777;
+   text-decoration: none; 
+}
+.t2{
+    font: 13px 'Droid Sans', sans-serif;
+    color: #444444;
+    font-weight: normal;
+    line-height: 1.4;
+}
+.t3{
+    font: 12px 'Droid Sans', sans-serif;
+    color: #444444;    
+}
+.t4{
+    font: 13px 'Droid Sans', sans-serif;
+    font-weight: bold;
+    color: #FFFFFF;
+    font-weight: normal;
+}
+.t5, .contacto_t5, .contacto h3{
+    font: 12px 'Droid Sans', sans-serif;
+    font-weight: bold;
+    color: #444444;
+}
+.t6{
+    font: 13px 'Droid Sans', sans-serif;
+    font-weight: bold;    
+    color: #444444;
+}
+.contenido-servicios ol, .column-1 ol, .columna-1 ol, .blog-cont ol{
+    list-style-type: decimal;
+    padding-left: 30px;
+}
+.contenido-servicios ul, .column-1 ul, .columna-1 ul, .blog-cont ul{
+    list-style-type: disc;
+    padding-left: 30px;
+}
+.columna-1, .columna-2{
+    margin-right: 30px;
+    float: left;
+}
+.contenedor-marcas .marcas h2 {
+    font-family: 'Myriad Pro';
+    font-size: 18px;
+    padding-top: 27px;
+}
+.noticias {
+    font-family: 'Myriad Pro';
+}
+.contenido .certificaciones .textwidget img.right{
+    margin-right: 90px;
+}
+.certificaciones h2{
+    margin-bottom: 29px;
+}
+.contenido{
+    background: #FFFFFF;
+}
+.footer{
+    background: #eeeeee;
+}
+.logo a{
+    padding-left: 62px;
+    display: block;
+    width: 139px;
+    padding-top: 43px;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight:normal;
+}
+.breadcrumb{
+    display: inline-block;
+}
+.contenedor-logo-menus{
+    background: #009933;
+    position: fixed;
+}
+.menu-principal ul li:hover,  .menu-top ul li:hover{
+    background: #444444;
+}
+/*.breadcrumb span a{
+    color: #777777 !important;
+    font-weight: normal;
+}*/
+.contenido a, .contenido a, .contenido a, .contenido a {
+    color: #ff2626;;
+    font-weight: bold;
+}
+.ver-eventos span{float: left;}
+.verMas{
+    background: url(../img/desktop/ver-mas.jpg) no-repeat;
+    width: 11px;
+    height: 11px;
+    float: left;
+    margin: 2px 5px 0 0;
+}
+.in span,
+.twitter span,
+.facebook span{float: left;}
+.redSocialIn,
+.redSocialTwitter,
+.redSocialFacebook{
+    width: 24px;
+    height: 25px;
+    float: left;
+    margin: 0 5px 0 0;
+}
+/*EFECTO 3D de los link*/
+.efecto3d .roll-link{
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: top;
+    -webkit-perspective: 1150px;
+    -moz-perspective: 1150px;
+    -ms-perspective: 1150px;
+    perspective: 1150px;
+    -webkit-perspective-origin: 50% 50%;
+    -moz-perspective-origin: 50% 50%;
+    -ms-perspective-origin: 50% 50%;
+    perspective-origin: 50% 50%;
+}
+.efecto3d a.md-wg-deal-link, .efecto3d a {
+    text-decoration: none;    
+    word-wrap: break-word;
+}
+.efecto3d a:-webkit-any-link {
+    font: 13px 'Droid Sans', sans-serif;
+    font-weight: bold;
+    color: #009933 !important;
+    text-decoration: none;
+}
+.efecto3d a{
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: 0;
+    /*font-size: 100%;*/
+    vertical-align: baseline;
+    background: transparent;
+}
+.efecto3d .roll-link:hover span {
+    background: #e93a30;
+    -webkit-transform: translate3d( 0px, 0px, -30px ) rotateX( 90deg );
+    -moz-transform: translate3d( 0px, 0px, -30px ) rotateX( 90deg );
+    -ms-transform: translate3d( 0px, 0px, -30px ) rotateX( 90deg );
+    transform: translate3d( 0px, 0px, -30px ) rotateX( 90deg );
+}
+.efecto3d .roll-link span {
+    display: inline-block;
+    position: relative;
+    padding: 0 2px;
+    -webkit-transition: all 400ms ease;
+    -moz-transition: all 400ms ease;
+    -ms-transition: all 400ms ease;
+    transition: all 400ms ease;
+    -webkit-transform-origin: 50% 0%;
+    -moz-transform-origin: 50% 0%;
+    -ms-transform-origin: 50% 0%;
+    transform-origin: 50% 0%;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    width: 100%;
+}
+.efecto3d span{
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: 0;    
+    vertical-align: baseline;
+    background: transparent;
+}
+.efecto3d .roll-link span:after {
+    content: attr(data-title);
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 0 4px;
+    color: #fff;
+    background: #e93a30;
+    -webkit-transform-origin: 50% 0%;
+    -moz-transform-origin: 50% 0%;
+    -ms-transform-origin: 50% 0%;
+    transform-origin: 50% 0%;
+    -webkit-transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
+    -moz-transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
+    -ms-transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
+    transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
+}
+::selection {
+    background: #ebebeb;
+}
+.efecto3d .entry a, .efecto3d .ftb-text a {
+    color: #e93a30 ;
+    font-weight: bold;
+}
+.efecto3d a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: auto;
+}
+.efecto3d .entry-wrap {
+    font-size: 15px;
+    line-height: 25px;
+}
+.errorCuadro {
+	font-size: 13px !important;
+    padding: 3px 6px;
+    background: red;
+    color: #FFFFFF;
+    width:98%; 
+    margin: 0 0 20px;
+}
+.okCuadro{
+   background: #378A5B; 
+   font-size: 13px !important;
+   padding: 3px 6px;    
+   color: #FFFFFF;
+   width:98%; 
+   margin: 0 0 20px;
+}
+textarea{
+    background: #eeeeee;
+    border: solid 1px #cccccc;
+    width: 555px;
+}
+input[type=submit] {
+    padding:5px 15px; 
+    background: #ff2626; 
+    border:0 none;
+    cursor:pointer; 
+    color: #FFFFFF;
+    font-weight: bold;
+    width: 83px;
+    height: 32px;
+}
+input, textarea{
+    outline: none;
+    resize: none;
+    padding: 0 2px;
+}
+.flotar_izq{
+	float:left;	
+}
+.flotar_der{
+	float:right;	
+}
+.btRojo {
+    background: #ff2626;
+    color: #FFFFFF;   
+    font-size: 16px;
+    height: 31px;
+    padding-right: 3px;
+    text-decoration: none;
+}
+.btRojo a{
+   display: inline-block; 
+}
+.btRojo span {
+    background: #ff2626;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: block;
+    padding: 6px 13px 6px 15px;
+    text-align: center;
+    display: inline-block;
+}
+.mayus{
+    text-transform: uppercase;
+}
+/*FIN EFECTO 3D de los link*/

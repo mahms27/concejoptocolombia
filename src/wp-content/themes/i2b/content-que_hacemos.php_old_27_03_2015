@@ -1,0 +1,136 @@
+ <?php 
+    $class = 'ancho-col_2'; 
+    if ( is_active_sidebar( 'sidebar-que_hacemos_right' ) ) :  
+        get_sidebar('que_hacemos_right');; 
+        $class = 'ancho-col_1'; 
+    endif; 
+?>
+<div class="<?php echo $class; ?> col-right t2 clearfix"> 
+    <?php while ( have_posts() ) : the_post(); ?>                
+        <?php the_content(); ?>
+    <?php endwhile; wp_reset_query(); ?>
+</div>    
+<?php query_posts(array('cat' => 14));?>
+<div class="clearfix servicios">
+    <h1><?php single_cat_title(); ?></h1>
+    <?php
+        $post = get_post(99); 
+        $post_cont[99] = array(
+            'titulo' => $post->post_title,
+            'contenido' => $post->post_content
+        );
+        $post = get_post(101);
+        $post_cont[101] = array(
+            'titulo' => $post->post_title,
+            'contenido' => $post->post_content
+        );
+        $post = get_post(103);
+        $post_cont[103] = array(
+            'titulo' => $post->post_title,
+            'contenido' => $post->post_content
+        );
+        $post = get_post(113);
+        $post_cont[113] = array(
+            'titulo' => $post->post_title,
+            'contenido' => $post->post_content
+        );
+        $post = get_post(116);
+        $post_cont[116] = array(
+            'titulo' => $post->post_title,
+            'contenido' => $post->post_content
+        );
+    ?>
+    
+    
+    <ul class="btn-servicios">
+        <li id="contenido_1" class="bot_estrat margin-der activo">            
+            <span class="texto"><?php echo $post_cont[99]['titulo']; ?></span>
+        </li>
+        <li id="contenido_2" class="bot_consult margin-der">            
+            <span class="texto"><?php echo $post_cont[101]['titulo']; ?></span>            
+        </li>
+        <li id="contenido_3" class="bot_prese margin-der">           
+            <span class="texto"><?php echo $post_cont[103]['titulo']; ?></span>   
+        </li>        
+        <li id="contenido_4" class="bot_expe margin-der">            
+            <span class="texto"><?php echo $post_cont[116]['titulo']; ?></span>            
+        </li>
+        <li id="contenido_5" class="bot_rendi">            
+            <span class="texto"><?php echo $post_cont[113]['titulo']; ?></span>            
+        </li>
+    </ul>
+    <div class="clearfix contenido-servicios">
+        <div class="loading"></div>
+        <div class="conte contenido_1 clearfix">
+            <div class="texto">
+                <?php
+                    echo '<h3>' .  $post_cont[99]['titulo'] . '</h3>'; 
+                    echo '<span>' . $post_cont[99]['contenido'] . '</span>';                 
+                ?>
+            </div>
+            <div class="imagen"><?php echo get_the_post_thumbnail(99); ?></div>
+        </div>
+        
+        <div class="conte contenido_2 clearfix">                        
+            <div class="texto">
+                <?php
+                    echo '<h3>' . $post_cont[101]['titulo'] . '</h3>'; 
+                    echo '<span>' . $post_cont[101]['contenido'] . '</span>';                 
+                ?>
+            </div>
+            <div class="imagen"><?php echo get_the_post_thumbnail(101); ?></div>
+        </div>        
+        
+        <div class="conte contenido_3 clearfix">            
+            <div class="texto">
+                <?php
+                    echo '<h3>' . $post_cont[103]['titulo'] . '</h3>'; 
+                    echo '<span>' . $post_cont[103]['contenido'] . '</span>';                 
+                ?>
+            </div>
+            <div class="imagen"><?php echo get_the_post_thumbnail(103); ?></div>
+        </div>        
+        
+        <div class="conte contenido_4 clearfix">            
+            <div class="texto">
+                <?php
+                    echo '<h3>' . $post_cont[116]['titulo'] . '</h3>'; 
+                    echo '<span>' . $post_cont[116]['contenido'] . '</span>';                 
+                ?>
+            </div>
+            <div class="imagen"><?php echo get_the_post_thumbnail(116); ?></div>
+        </div>        
+        
+        <div class="conte contenido_5 clearfix">            
+            <div class="texto">
+                <?php
+                    echo '<h3>' . $post_cont[113]['titulo'] . '</h3>'; 
+                    echo '<span>' . $post_cont[113]['contenido'] . '</span>';                 
+                ?>
+            </div>
+            <div class="imagen"><?php echo get_the_post_thumbnail(113); ?></div>
+        </div>        
+    </div>    
+</div>
+<div class="contenido-servicios_movil clearfix">
+    <div id="servicio_1" class="titulo-servicio"><?php echo $post_cont[99]['titulo']; ?></div>
+    <div class="contenido-servicio servicio_1" style="display: block;">        
+        <?php echo $post_cont[99]['contenido']; ?>
+    </div>
+    <div id="servicio_2" class="titulo-servicio"><?php echo $post_cont[101]['titulo']; ?></div>
+    <div class="contenido-servicio servicio_2">        
+        <?php echo $post_cont[101]['contenido']; ?>
+    </div>
+    <div id="servicio_3" class="titulo-servicio"><?php echo $post_cont[103]['titulo']; ?></div>
+    <div class="contenido-servicio servicio_3">        
+        <?php echo $post_cont[103]['contenido']; ?>
+    </div>
+    <div id="servicio_4" class="titulo-servicio"><?php echo $post_cont[116]['titulo']; ?></div>
+    <div class="contenido-servicio servicio_4">        
+        <?php echo $post_cont[116]['contenido']; ?>
+    </div>
+    <div id="servicio_5" class="titulo-servicio"><?php echo $post_cont[113]['titulo']; ?></div>
+    <div class="contenido-servicio servicio_5">        
+        <?php echo $post_cont[113]['contenido']; ?>
+    </div>
+</div>

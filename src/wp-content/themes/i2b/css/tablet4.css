@@ -1,0 +1,64 @@
+.nemp-colright {
+    width: 100%;
+}
+.col-right {
+    margin: 4px 0 0 0;        
+    width: 100%;
+}
+.ancho-col_2 .imagen-der {
+    width: 100%;
+}
+.ancho-col_2 .texto-izq {
+    width: 100%;
+    margin-right: 0;
+    margin-top: 8px;
+}
+.footer-column {
+    float: none;
+    width: 100%;
+    margin-right: 0;
+}
+.footer-redes-sociales .center-footer .ancho-red-soc {
+    width: 100%;
+}
+.footer {
+    width: 100%;
+    height: auto;
+    padding-bottom: 16px;
+}
+.footer-column.ultimo {
+    padding-top: 0;
+    margin-bottom: 29px;
+    margin-top: 15px;
+}
+.contacto p {
+    padding-bottom: 0;
+} 
+.footer-redes-sociales .center-footer .ancho-red-soc a{
+    width: auto;
+}
+.footer-column.ultimo {
+    width: 100%;
+}
+.btn-cliente {
+    width: 29%;
+    height: 110px;
+    display: block;
+    float: left;
+    background: #eeeeee;
+    margin: 0 2% 17px 0;
+    background-repeat:no-repeat;
+    background-position: center center;
+}
+.btn-cliente.margen-der{
+    margin-right: 4.3%;
+}
+#footer {
+    margin-top: -163px;
+    height: 338px;
+   *height: 350px;
+    padding-top: 6px;
+}
+#main {
+    padding-bottom: 208px;
+}

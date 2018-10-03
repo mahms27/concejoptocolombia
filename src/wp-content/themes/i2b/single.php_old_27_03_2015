@@ -1,0 +1,13 @@
+<?php 
+    $var = get_the_category();
+    $var[0]->cat_ID;    
+    if($var[0]->cat_ID == 3): //POSTULACIONES                               
+        get_header();             
+        get_template_part('content', 'postulacion' );   
+        get_footer();
+    elseif($var[0]->parent == 11): //PAGINA DEL BLOG   
+        get_template_part('content', 'articulos_blog' ); 
+    else :
+        get_template_part('content', 'single' ); 
+    endif;
+?> 
