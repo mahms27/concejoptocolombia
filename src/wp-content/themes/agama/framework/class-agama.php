@@ -176,7 +176,7 @@ if( ! class_exists( 'Agama' ) ) {
 		function excerpt_more( $more ) {
 			global $post;
 			if( get_theme_mod('agama_blog_readmore_url', true) ) {
-				return sprintf('<br><br><a class="more-link" href="%s">%s</a>', get_permalink($post->ID), __('Read More', 'agama'));
+				return sprintf('<br><br><a class="more-link" href="%s">%s</a>', get_permalink($post->ID), __('Ver Mas', 'agama'));
 			}
 			return;
 		}
