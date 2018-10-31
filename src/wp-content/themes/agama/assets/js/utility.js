@@ -69,6 +69,8 @@
 
    	});
 
+   	document.getElementById("one-tab").click();
+
 })(jQuery);
 
 
