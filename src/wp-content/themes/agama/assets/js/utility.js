@@ -68,8 +68,10 @@
 	 	}
 
    	});
-
-   	document.getElementById("one-tab").click();
+  	if($("#one-tab").length){
+  		document.getElementById("one-tab").click();
+  	}
+   		
 
 })(jQuery);
 
