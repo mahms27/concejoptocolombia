@@ -94,6 +94,8 @@ function openTab(evt, option) {
 }
 
 function change_languaje_title_events(text_original){
+	if(text_original != ""){
+
     var text_split= text_original.split('for');
     var text_new = text_split[1].split(' ');
     var month=text_new[1];
@@ -109,6 +111,8 @@ function change_languaje_title_events(text_original){
     if(month.trim() == "October"){month ="Octubre";}
     if(month.trim() == "November"){month ="Noviembre";}
     if(month.trim() == "December"){month ="Diciembre";}
-    var text_final = "Eventos para " + month +" "+ text_new[2];
-    return text_final;   
+    var text_final = "Eventos para " + month +" "+ text_new[2];	
+    return text_final;
+	}
+       
 }
